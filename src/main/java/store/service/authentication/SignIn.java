@@ -11,6 +11,7 @@ import store.repository.UserRepository;
 import store.service.authentication.exception.CredentialsInvalidException;
 import store.web.rest.dto.request.SignInRequest;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 
 @Service
@@ -27,11 +28,17 @@ public class SignIn {
             Optional<User> user = userRepository.findUserByEmail(signInInfo.getEmail().trim().toLowerCase());
             if (user.isPresent()) {
                 if (passwordEncoder.matches(signInInfo.getPassword(), user.get().getHashPassword())) {
+                    updateLastLogin(user.get());
                     return Pair.of(user.get(), tokenEncoder.generate(user.get()));
                 }
             }
         } catch (Exception ignored) {
         }
         throw new CredentialsInvalidException();
+    }
+
+    private void updateLastLogin(User user) {
+        user.setLastLogin(LocalDateTime.now());
+        userRepository.save(user);
     }
 }

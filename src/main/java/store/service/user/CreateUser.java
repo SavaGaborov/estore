@@ -9,6 +9,8 @@ import store.domain.enumeration.Role;
 import store.repository.UserRepository;
 import store.service.user.value.UserInfo;
 
+import java.time.LocalDateTime;
+
 @Service
 @RequiredArgsConstructor
 public class CreateUser {
@@ -19,6 +21,8 @@ public class CreateUser {
     @Transactional(rollbackFor = Exception.class)
     public User execute(final UserInfo userInfo) {
         final User user = User.builder()
+                .createdAt(LocalDateTime.now())
+                .deleted(false)
                 .firstName(userInfo.getFirstName())
                 .lastName(userInfo.getLastName())
                 .email(userInfo.getEmail().trim().toLowerCase())

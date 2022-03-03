@@ -1,6 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/postgres
+    scheme: public
+    url: jdbc:postgresql://localhost:5432/postgres?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8
     username: postgres
     password: postgres
   jpa:

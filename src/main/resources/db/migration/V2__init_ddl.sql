@@ -2,6 +2,7 @@ create table users
 (
     id                             bigserial    not null primary key,
     created_at                     timestamp    not null,
+    deleted                        boolean      not null,
     first_name                     varchar(128) not null,
     last_name                      varchar(128) not null,
     email                          varchar(128) not null,
@@ -10,7 +11,8 @@ create table users
     country                        varchar(255) not null,
     role                           varchar(128) not null,
     subscriptions                  varchar(1024) not null,
-    session_id                     varchar(255) not null
+    session_id                     varchar(255) not null,
+    last_login                     timestamp     not null
 );
 
 create unique index email_index on users (email);
