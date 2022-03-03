@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.Setter;
 import store.domain.enumeration.LanguageCode;
 
+import java.util.Set;
+
 @AllArgsConstructor
 @Builder
 @Setter
@@ -23,4 +25,6 @@ public class UserInfo {
     private LanguageCode languageCode;
 
     private String country;
+
+    private Set<String> subscriptions;
 }

@@ -4,9 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import store.domain.User;
+import store.domain.enumeration.Role;
 import store.repository.UserRepository;
 import store.service.user.exception.UserNotFoundException;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -20,6 +22,12 @@ public class GetUser {
         final Optional<User> user = Optional.ofNullable(userRepository.findById(id).orElseThrow(UserNotFoundException::new));
         checkUser(user);
         return user.get();
+    }
+
+    @Transactional(readOnly = true)
+    public List<User> byRole(final Role role) {
+        final List<User> users = userRepository.findAllByRole(role);
+        return users;
     }
 
     @Transactional(readOnly = true)
