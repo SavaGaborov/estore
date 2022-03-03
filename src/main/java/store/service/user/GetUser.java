@@ -38,7 +38,7 @@ public class GetUser {
     }
 
     private void checkUser(final Optional<User> user) {
-        if (!user.isPresent()) {
+        if (!user.isPresent() || user.get().isDeleted()) {
             throw new UserNotFoundException();
         }
     }

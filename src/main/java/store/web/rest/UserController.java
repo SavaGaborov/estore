@@ -81,7 +81,7 @@ public class UserController {
     public ResponseEntity<Void> delete(@PathVariable("id") Long id) {
         log.info("DELETE /api/users/{}", id);
         final User customer = getUser.byId(id);
-        deleteUser.execute(customer.getId());
+        deleteUser.execute(customer);
         return ResponseEntity.noContent().build();
     }
 

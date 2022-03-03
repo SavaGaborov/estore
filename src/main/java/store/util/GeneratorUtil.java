@@ -1,7 +1,11 @@
 package store.util;
 
+import org.apache.commons.lang.RandomStringUtils;
+
 import java.util.Random;
 import java.util.UUID;
+
+import static store.util.ConstantsUtil.SESSION_ID_LENGTH;
 
 public final class GeneratorUtil {
 
@@ -28,5 +32,9 @@ public final class GeneratorUtil {
             sb.append(ALPHA_NUMERIC.charAt(index));
         }
         return sb.toString();
+    }
+
+    public static String getRandomStringWithNumbers() {
+        return RandomStringUtils.random(SESSION_ID_LENGTH, true, true);
     }
 }
