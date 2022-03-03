@@ -9,7 +9,7 @@ create table users
     language_code                  varchar(5)   not null,
     country                        varchar(255) not null,
     role                           varchar(128) not null,
-    permissions                    varchar(255) not null,
+    subscriptions                  varchar(1024) not null,
     session_id                     varchar(255) not null
 );
 
@@ -17,10 +17,10 @@ create unique index email_index on users (email);
 
 create table payment
 (
-    id                             bigserial    not null primary key,
-    r_user_id                      bigserial    not null,
-    payment_date                   timestamp    not null,
-    transaction_type               varchar(255) not null,
+    id                             bigserial     not null primary key,
+    user_id                        bigserial     not null references users (id),
+    payment_date                   timestamp     not null,
+    subscription_type              varchar(255)  not null,
     price                          decimal(10,2) not null
 );
 
