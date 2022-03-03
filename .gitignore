@@ -55,3 +55,4 @@ logs
 docker-config.json
 
 *-local.properties
+/target/
