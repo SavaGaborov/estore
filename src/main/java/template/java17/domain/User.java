@@ -57,7 +57,7 @@ import template.java17.domain.enumeration.Role;
 @Builder
 @Getter
 @Setter
-public class User implements Serializable{
+public class User implements UserDetails, Serializable{
 
     @Column(columnDefinition = "bigserial")
     @Id
@@ -68,12 +68,22 @@ public class User implements Serializable{
     @Column(nullable = false)
     @NotBlank
     @Size(max = 128)
+    private String firstName;
+
+    @Column(nullable = false)
+    @NotBlank
+    @Size(max = 128)
+    private String lastName;
+
+    @Column(nullable = false)
+    @NotBlank
+    @Size(max = 128)
     private String email;
 
     @Column(nullable = false)
-    @NotNull
-    @Enumerated(EnumType.STRING)
-    private Role role;
+    @NotBlank
+    @Size(max = 255)
+    private String hashPassword;
 
     @Builder.Default
     @Column(nullable = false)
@@ -81,7 +91,51 @@ public class User implements Serializable{
     @Enumerated(EnumType.STRING)
     private LanguageCode languageCode = LanguageCode.en;
 
+    @Column(nullable = false)
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    @Column(nullable = false)
+    @NotBlank
+    @Size(max = 255)
+    private String permissions;
+
+    @Column(nullable = false)
+    @NotBlank
+    @Size(max = 255)
+    private String sessionId;
+
+    @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return Collections.singletonList(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    @Override
+    public String getPassword() {return this.hashPassword;}
+
+    @Override
+    public String getUsername() {
+        return this.email;
     }
 }
