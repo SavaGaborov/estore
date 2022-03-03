@@ -1,8 +1,6 @@
 # Compiled class file
 *.class
 
-target/
-
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
@@ -45,8 +43,11 @@ target/
 hs_err_pid*
 
 .gradle
+target/
 */target/**
 target/**
 build
 logs
 docker-config.json
+
+*-local.properties
