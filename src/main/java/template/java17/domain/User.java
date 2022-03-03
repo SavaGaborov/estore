@@ -73,6 +73,11 @@ public class User implements UserDetails, Serializable{
     private LanguageCode languageCode = LanguageCode.en;
 
     @Column(nullable = false)
+    @NotBlank
+    @Size(max = 255)
+    private String country;
+
+    @Column(nullable = false)
     @NotNull
     @Enumerated(EnumType.STRING)
     private Role role;

@@ -7,6 +7,7 @@ create table users
     email                          varchar(128) not null,
     hash_password                  varchar(255) not null,
     language_code                  varchar(5)   not null,
+    country                        varchar(255) not null,
     role                           varchar(128) not null,
     permissions                    varchar(255) not null,
     session_id                     varchar(255) not null
