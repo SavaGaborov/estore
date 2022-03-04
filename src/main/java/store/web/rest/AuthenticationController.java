@@ -50,4 +50,6 @@ public class AuthenticationController {
         changePassword.setNewPassword(data.toChangePasswordInfo());
         return ResponseEntity.noContent().build();
     }
+
+    //TODO Webscokets configurations and set
 }

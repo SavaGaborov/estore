@@ -13,6 +13,7 @@ import java.time.ZonedDateTime;
 @Entity(name = "payment")
 @Table(name = "payment")
 @AllArgsConstructor
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor

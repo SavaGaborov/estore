@@ -25,4 +25,6 @@ public class PaymentController {
         final GetAnalyticsResponse analytics = getAnalytics.execute();
         return ResponseEntity.ok(analytics);
     }
+
+    //TODO Integration with Stripe APIs
 }

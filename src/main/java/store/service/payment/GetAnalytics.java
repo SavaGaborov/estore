@@ -8,6 +8,7 @@ import store.repository.PaymentRepository;
 import store.web.rest.dto.response.GetAnalyticsResponse;
 
 import java.math.BigDecimal;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +21,7 @@ public class GetAnalytics {
     public GetAnalyticsResponse execute() {
 
         List<Payment> allPayments = paymentRepository.findAll();
-        List<Payment> currentMonthPayments = getAllPaymentsForCurrentMonth(allPayments);
+        List<Payment> currentMonthPayments = getPaymentsForCurrentMonth(allPayments);
 
         return GetAnalyticsResponse.builder()
                 .totalEarnings(getEarningsForPayments(allPayments))
@@ -46,25 +47,24 @@ public class GetAnalytics {
     }
 
     private List<Payment> getEbookPayments(List<Payment> payments){
-        final List<Payment> ebookPayments = payments
+        return payments
                 .stream()
                 .filter(payment -> payment.getSubscriptionType().equals(SubscriptionType.EBOOK))
                 .collect(Collectors.toList());
-        return ebookPayments;
     }
 
     private List<Payment> getCoursesPayments(List<Payment> payments){
-        final List<Payment> ecoursePayments = payments
+        return payments
                 .stream()
                 .filter(payment -> !payment.getSubscriptionType().equals(SubscriptionType.EBOOK))
                 .collect(Collectors.toList());
-        return ecoursePayments;
     }
 
-    private List<Payment> getAllPaymentsForCurrentMonth(List<Payment> allPayments) {
-
-        //TODO current monthe filtering
-        return null;
+    private List<Payment> getPaymentsForCurrentMonth(List<Payment> allPayments) {
+        return allPayments
+                .stream()
+                .filter(payment -> payment.getPaymentDate().getMonth().equals(ZonedDateTime.now().getMonth()))
+                .collect(Collectors.toList());
     }
 
 }
