@@ -66,7 +66,7 @@ public class UserController {
         return ResponseEntity.ok(from(customer));
     }
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ROLE_ADMIN') or hasRole('ROLE_CUSTOMER')")
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable("id") Long id,
                                        @RequestBody @Valid UpdateUserRequest data) {
