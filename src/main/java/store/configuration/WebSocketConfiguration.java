@@ -9,7 +9,7 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 @Configuration
 @EnableWebSocketMessageBroker
 public class WebSocketConfiguration extends AbstractWebSocketMessageBrokerConfigurer {
-                                    //TODO depricated version but with the newest don't work
+                                    //TODO depricated version but with the newest don't work -> test WS https://www.baeldung.com/websockets-spring
 
         @Override
         public void configureMessageBroker(MessageBrokerRegistry config) {

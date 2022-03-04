@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import store.service.authentication.ChangePassword;
 import store.service.authentication.SignIn;
+import store.service.authentication.SignOut;
 import store.service.authentication.SignUp;
 import store.web.rest.dto.mapper.JwtMapper;
 import store.web.rest.dto.request.ChangePasswordRequest;
@@ -17,6 +18,8 @@ import store.web.rest.dto.request.SignUpRequest;
 import store.web.rest.dto.response.JwtResponse;
 
 import javax.validation.Valid;
+
+import java.security.Principal;
 
 import static org.springframework.http.HttpStatus.CREATED;
 
@@ -28,6 +31,7 @@ public class AuthenticationController {
 
     private final SignUp signUp;
     private final SignIn signIn;
+    private final SignOut signOut;
     private final ChangePassword changePassword;
     private final JwtMapper jwtMapper;
 
@@ -51,5 +55,11 @@ public class AuthenticationController {
         return ResponseEntity.noContent().build();
     }
 
-    //TODO Webscokets configurations and set
+    @PostMapping("/me/sign-out")
+    public ResponseEntity<Void> signOut(Principal principal) {
+        log.info("POST /api/authentication/sign-out");
+        signOut.withCustomer(principal.getName());
+        return ResponseEntity.noContent().build();
+    }
+
 }
