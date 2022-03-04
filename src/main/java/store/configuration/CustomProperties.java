@@ -39,4 +39,6 @@ public class CustomProperties {
 
     @NotNull
     private DigitalOceanProperties digitalOcean;
+
+    private String xApiKey;
 }

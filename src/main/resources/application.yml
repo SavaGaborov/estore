@@ -44,5 +44,6 @@ custom:
     bucket: 'bojantransstore-dev'
     region: 'fra1'
     url: 'bojantransstorespaces.com'
+  x-api-key: 'apiKey'
 
 

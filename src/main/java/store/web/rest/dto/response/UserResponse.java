@@ -40,7 +40,7 @@ public class UserResponse {
                 .email(user.getEmail())
                 .languageCode(user.getLanguageCode())
                 .country(user.getCountry())
-                .subscriptions(null)
+                .subscriptions(user.getSubscriptions().split(","))
                 .lastLogin(user.getLastLogin())
                 .build();
     }

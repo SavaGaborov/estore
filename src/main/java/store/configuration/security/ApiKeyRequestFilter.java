@@ -30,7 +30,7 @@ public class ApiKeyRequestFilter extends OncePerRequestFilter {
         AbstractAuthenticationToken abstractAuthenticationToken = null;
         try {
             final String apiKey = httpServletRequest.getHeader("X-Api-Key");
-            if (apiKey != null && apiKey.equals("apikljuc")) {   //TODO api key from custom properties
+            if (apiKey != null && apiKey.equals(customProperties.getXApiKey())) {
                 abstractAuthenticationToken = new ApiKeyAuthenticationToken(apiKey);
                 abstractAuthenticationToken
                         .setDetails(new WebAuthenticationDetailsSource().buildDetails(httpServletRequest));

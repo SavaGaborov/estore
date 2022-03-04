@@ -43,8 +43,10 @@ public class CreateUserRequest implements Serializable {
     @NotBlank
     private String country;
 
+    private String[] subscriptions;
+
     public UserInfo toUserInfo() {
-        return UserInfo.builder().firstName(firstName).lastName(lastName).email(email).password(password).languageCode(languageCode).country(country)
+        return UserInfo.builder().firstName(firstName).lastName(lastName).email(email).password(password).languageCode(languageCode).country(country).subscriptions(subscriptions)
                 .build();
     }
 }

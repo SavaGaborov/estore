@@ -9,11 +9,7 @@ import store.service.user.value.UserInfo;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-
 import java.io.Serializable;
-import java.util.List;
-import java.util.Set;
 
 import static store.util.ConstantsUtil.EMAIL_REGEXP;
 
@@ -41,7 +37,7 @@ public class UpdateUserRequest implements Serializable {
     private String country;
 
     @NotBlank
-    private Set<String> subscriptions;
+    private String[] subscriptions;
 
     public UserInfo toUserInfo() {
         return UserInfo.builder().firstName(firstName).lastName(lastName).email(email).languageCode(languageCode).country(country).subscriptions(subscriptions)

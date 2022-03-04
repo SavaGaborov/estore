@@ -30,6 +30,7 @@ public class CreateUser {
                 .languageCode(userInfo.getLanguageCode())
                 .country(userInfo.getCountry())
                 .role(Role.ROLE_CUSTOMER)
+                .subscriptions(String.join(",", userInfo.getSubscriptions()))
                 .build();
         return userRepository.save(user);
     }
