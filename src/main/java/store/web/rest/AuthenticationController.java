@@ -35,6 +35,8 @@ public class AuthenticationController {
     private final ChangePassword changePassword;
     private final JwtMapper jwtMapper;
 
+
+
     @PostMapping("/sign-up")
     public ResponseEntity<Void> signUp(@RequestBody @Valid SignUpRequest data) {
         log.info("POST /authentication/sign-up - {}", data.toString());
@@ -47,6 +49,7 @@ public class AuthenticationController {
         log.info("POST /authentication/sign-in - {}", data.toString());
         return ResponseEntity.ok(jwtMapper.mapToJwtResponse(signIn.signIn(data)));
     }
+
 
     @PostMapping("/change-password")
     public ResponseEntity<Void> changePassword(@RequestBody @Valid ChangePasswordRequest data) {
