@@ -11,6 +11,8 @@ import store.service.user.value.UserInfo;
 
 import java.time.LocalDateTime;
 
+import static store.util.GeneratorUtil.getRandomStringWithNumbers;
+
 @Service
 @RequiredArgsConstructor
 public class CreateUser {
@@ -30,7 +32,9 @@ public class CreateUser {
                 .languageCode(userInfo.getLanguageCode())
                 .country(userInfo.getCountry())
                 .role(Role.ROLE_CUSTOMER)
-                .subscriptions(String.join(",", userInfo.getSubscriptions()))
+                .subscriptions(userInfo.getSubscriptions() != null ? String.join(",", userInfo.getSubscriptions()) : "")
+                .sessionId(getRandomStringWithNumbers())
+                .lastLogin(LocalDateTime.now())
                 .build();
         return userRepository.save(user);
     }

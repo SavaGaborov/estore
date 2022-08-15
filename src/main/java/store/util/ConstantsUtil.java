@@ -13,44 +13,32 @@ public final class ConstantsUtil {
     public static final String COUNTRIES = "Afghanistan," +
                                             "Albania," +
                                             "Algeria," +
-                                            "Antigua and Barbuda," +
                                             "Argentina," +
                                             "Armenia," +
                                             "Australia," +
                                             "Austria," +
                                             "Azerbaijan," +
                                             "Bahrain," +
-                                            "Bahamas," +
                                             "Bangladesh," +
                                             "Barbados," +
                                             "Belarus," +
                                             "Belgium," +
                                             "Belize," +
-                                            "Benin," +
                                             "Bermuda," +
                                             "Bhutan," +
                                             "Bolivia," +
                                             "Bosnia and Herzegovina," +
-                                            "Botswana," +
                                             "Brazil," +
                                             "Brunei," +
                                             "Bulgaria," +
-                                            "Burkina Faso," +
-                                            "Burundi," +
                                             "Cambodia," +
                                             "Cameroon," +
                                             "Canada," +
-                                            "Cape Verde," +
                                             "Central African Republic," +
-                                            "Chad," +
                                             "Chile," +
                                             "China," +
                                             "Colombia," +
-                                            "Comoros," +
-                                            "Congo," +
-                                            "DR Congo," +
                                             "Costa Rica," +
-                                            "Cote d'Ivoire," +
                                             "Croatia," +
                                             "Cuba," +
                                             "Cyprus," +
@@ -60,17 +48,11 @@ public final class ConstantsUtil {
                                             "Ecuador," +
                                             "Egypt," +
                                             "El Salvador," +
-                                            "Equatorial Guinea," +
                                             "Estonia," +
                                             "Ethiopia," +
-                                            "Falkland Islands," +
                                             "Faroe Islands," +
-                                            "Fiji," +
                                             "Finland," +
                                             "France," +
-                                            "French Guiana," +
-                                            "Gabon," +
-                                            "Gambia," +
                                             "Georgia," +
                                             "Germany," +
                                             "Ghana," +
@@ -78,10 +60,7 @@ public final class ConstantsUtil {
                                             "Greece," +
                                             "Greenland," +
                                             "Grenada," +
-                                            "Guadeloupe," +
                                             "Guatemala," +
-                                            "Guinea," +
-                                            "Guinea-Bissau," +
                                             "Haiti," +
                                             "Honduras," +
                                             "Hong Kong," +
@@ -96,17 +75,14 @@ public final class ConstantsUtil {
                                             "Italy," +
                                             "Jamaica," +
                                             "Japan," +
-                                            "Jersey," +
                                             "Jordan," +
                                             "Kazakhstan," +
-                                            "Kenya," +
                                             "North Korea" +
                                             "South Korea" +
                                             "Kuwait," +
                                             "Kyrgyzstan," +
                                             "Latvia," +
                                             "Lebanon," +
-                                            "Lesotho," +
                                             "Liberia," +
                                             "Libya," +
                                             "Liechtenstein," +
@@ -114,36 +90,24 @@ public final class ConstantsUtil {
                                             "Luxembourg," +
                                             "Macedonia," +
                                             "Madagascar," +
-                                            "Malawi," +
                                             "Malaysia," +
-                                            "Maldives," +
-                                            "Mali," +
                                             "Malta," +
-                                            "Martinique," +
-                                            "Mauritania," +
-                                            "Mauritius," +
                                             "Mexico," +
-                                            "Micronesia," +
                                             "Moldova," +
-                                            "Monaco," +
                                             "Mongolia," +
                                             "Montenegro," +
                                             "Morocco," +
-                                            "Mozambique," +
                                             "Myanmar," +
-                                            "Namibia," +
                                             "Nepal," +
                                             "Netherlands," +
                                             "New Zealand," +
                                             "Nicaragua," +
-                                            "Niger," +
                                             "Nigeria," +
                                             "Norway," +
                                             "Oman," +
                                             "Pakistan," +
                                             "Palestine," +
                                             "Panama," +
-                                            "Papua New Guinea," +
                                             "Paraguay," +
                                             "Peru," +
                                             "Philippines," +
@@ -153,39 +117,27 @@ public final class ConstantsUtil {
                                             "Qatar," +
                                             "Romania," +
                                             "Russian Federation," +
-                                            "Rwanda," +
-                                            "Samoa," +
                                             "San Marino," +
-                                            "Sao Tome and Principe," +
                                             "Saudi Arabia," +
                                             "Senegal," +
                                             "Serbia," +
-                                            "Seychelles," +
-                                            "Sierra Leone," +
                                             "Singapore," +
                                             "Slovakia," +
                                             "Slovenia," +
-                                            "Solomon Islands," +
-                                            "Somalia," +
                                             "South Africa," +
-                                            "South Sudan," +
                                             "Spain," +
                                             "Sri Lanka," +
-                                            "Sudan," +
-                                            "Suriname," +
                                             "Sweden," +
                                             "Switzerland," +
                                             "Syrian," +
                                             "Taiwan," +
                                             "Tajikistan," +
-                                            "Tanzania," +
                                             "Thailand," +
                                             "Togo," +
                                             "Trinidad and Tobago," +
                                             "Tunisia," +
                                             "Turkey," +
                                             "Turkmenistan," +
-                                            "Uganda," +
                                             "Ukraine," +
                                             "United Arab Emirates," +
                                             "United Kingdom," +
@@ -194,6 +146,5 @@ public final class ConstantsUtil {
                                             "Uzbekistan" +
                                             "Venezuela," +
                                             "Yemen," +
-                                            "Zambia," +
                                             "Zimbabwe,";
 }
